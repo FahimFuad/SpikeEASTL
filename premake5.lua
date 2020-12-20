@@ -7,14 +7,26 @@ project "SpikeEASTL"
 
     files
     {
-        "EASTL/**.h",
-        "EASTL/**.cpp"
+        "EASTL/include/**.h",
+        "EASTL/source/**.cpp"
     }
 
     includedirs
     {
-        "EASTL/**.h"
+        "EASTL/include",
+        "EASTL/include/EABase/include/Common"
     }
+
+    filter "system:windows"
+        systemversion "latest"
+        cppdialect "C++17"
+        staticruntime "On"
+
+    filter "system:linux"
+        pic "On"
+        systemversion "latest"
+        cppdialect "C++17"
+        staticruntime "On"
 
     filter "configurations:Debug"
         runtime "Debug"
