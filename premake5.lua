@@ -10,7 +10,12 @@ project "SpikeEASTL"
         "EASTL/**.h",
         "EASTL/**.cpp"
     }
-    
+
+    includedirs
+    {
+        "EASTL/**.h"
+    }
+
     filter "configurations:Debug"
         runtime "Debug"
         symbols "on"
